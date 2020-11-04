@@ -1,4 +1,5 @@
 # IMARIS_to_LAM
+## Author: Jack Morikka
 
 This is a small program that uses .csv files saved from an IMARIS batch run and turns them into LAM ready folders.
 Instructions:
