@@ -125,7 +125,11 @@ class Imaris_to_lam:
                 self.__window.destroy()
                 # Calls the csv_create function from the istl.py file which
                 # should be in the same directory as this istl_RUN.py
+                logging.info(
+                    "Process started for %s" % self.__name_input.get())
                 istl.csv_create(csv_path, output_folder_path, spot)
+                logging.info(
+                    "Process finished for %s" % self.__name_input.get())
             except Exception as e:
                 logging.exception(str(e))
 
