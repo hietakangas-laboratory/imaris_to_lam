@@ -34,7 +34,6 @@ class Imaris_to_lam:
         # Creates the structure for the GUI with the title
         self.__window = Tk()
         self.__window.title('Imaris_to_LAM')
-        self.__window.bind('<Return>', self.go)
 
         # Creates label for select spot folder selection prompt
         self.__s_ij_prompt = Label(self.__window,
@@ -98,7 +97,7 @@ class Imaris_to_lam:
         self.__ofolder.set(selected_directory)
 
 
-    def go(self, event):
+    def go(self):
         ''' If an input folder, output folder and spot name are selected, this
         function imports the istl csv_create function to use on the bulk .csv
         files to create new directories for each sample and new .csv files
