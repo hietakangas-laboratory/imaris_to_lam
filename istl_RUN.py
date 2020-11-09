@@ -106,7 +106,7 @@ class Imaris_to_lam:
         # Checks that no fields are left blank
         if self.__ofolder.get() == '' or self.__csv_folder.get() == '' or self.__name_input.get() == '':
             from tkinter import messagebox
-
+            # Shows a warning message if a field is blank upon running
             messagebox.showinfo("Warning", "spot.csv path or output folder not"
                                            " selected! Or name not entered!")
         else:
@@ -123,13 +123,13 @@ class Imaris_to_lam:
                 output_folder_path = str(self.__ofolder.get())
                 spot = str(self.__name_input.get())
                 self.__window.destroy()
+                logging.info(
+                    "Process started for %s" % spot)
                 # Calls the csv_create function from the istl.py file which
                 # should be in the same directory as this istl_RUN.py
-                logging.info(
-                    "Process started for %s" % self.__name_input.get())
                 istl.csv_create(csv_path, output_folder_path, spot)
                 logging.info(
-                    "Process finished for %s" % self.__name_input.get())
+                    "Process finished for %s" % spot)
             except Exception as e:
                 logging.exception(str(e))
 
