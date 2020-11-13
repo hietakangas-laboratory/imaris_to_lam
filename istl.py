@@ -27,8 +27,8 @@ def csv_create(input_csv_folder, output_folder_path, spot):
                         orig_dir_name = id.split("_")
                         orig_dir_name_pre = '_'.join(orig_dir_name[:-2])
                         id_dir = os.path.join(output_folder_path, orig_dir_name_pre)
-                        group = '_'.join(orig_dir_name[:-4])
-                        spot_dir = group + "_" + spot + "_statistics"
+                        #group = '_'.join(orig_dir_name[:-4])
+                        spot_dir = orig_dir_name_pre + "_" + spot + "_statistics"
                         spot_dir_path = os.path.join(id_dir, spot_dir)
                         if not os.path.exists(id_dir):
                             os.mkdir(id_dir)
