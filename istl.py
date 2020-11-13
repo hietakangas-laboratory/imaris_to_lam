@@ -35,4 +35,8 @@ def csv_create(input_csv_folder, output_folder_path, spot):
                         if not os.path.exists(spot_dir_path):
                             os.mkdir(spot_dir_path)
                         sav_loc = os.path.join(spot_dir_path, "{}".format(fil))
-                        data.to_csv(sav_loc, index=False)
+                        heady = "Made with\nISTL\n"
+                        with open(sav_loc, 'w') as file:
+                            file.write(heady)
+                            data.to_csv(file, index=False, line_terminator='\n')
+                            print(file)
